@@ -4,8 +4,6 @@ import { useCart } from './hooks/useCart';
 import './index.css';
 import Header from './components/Header';
 import Home from './components/Home';
-import LoginPage from './pages/LoginPage';
-import Register from './pages/Register';
 import Footer from './components/Footer';
 import Slider from './components/Slider';
 import CartComponent from './components/CartComponent';
@@ -22,7 +20,6 @@ const App: React.FC = () => {
 
   const sampleProduct: Product = { id: 1, name: 'Producto Ejemplo', price: 100, category: 'ejemplo', stock: 10 };
 
-  // Verifica si la ruta actual es de registro o inicio de sesión
   const isAuthPage = location.pathname === '/pages/login' || location.pathname === '/register';
 
   return (
