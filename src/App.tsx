@@ -57,11 +57,11 @@ const App: React.FC = () => {
         Agregar Producto Ejemplo
       </button>
 
-      <Routes>
+      {/*<Routes>
         <Route path='/' element={<Home />} />
         <Route path="/pages/login" element={<LoginPage />} />
         <Route path="/register" element={<Register />} />
-      </Routes>
+      </Routes>*/}
 
       <Footer />
     </>
