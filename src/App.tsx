@@ -1,11 +1,27 @@
 
+import Header from './components/Header'
 import './index.css'
+import { Product } from './types/types';
+
 
 function App() {
 
   return (
     <>
-      <h1 className='font-bold text-4xl text-red-700'>prueba</h1>
+      <div className="min-h-screen bg-slate-600 text-white">
+        <Header
+          cart={cart}
+          removeFromCart={removeFromCart}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}
+          clearCart={clearCart}
+          isEmpty={isEmpty}
+          cartTotal={cartTotal}
+          showCart={showCart}
+          toggleCart={toggleCart}
+        />
+
+      </div>
     </>
   )
 }
