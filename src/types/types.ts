@@ -36,3 +36,4 @@ export interface HeaderProps {
     isEmpty: boolean;
     toggleCart: () => void;
 }
+

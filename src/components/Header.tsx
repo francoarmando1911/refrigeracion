@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { FaShoppingCart, FaBars, FaWhatsapp } from 'react-icons/fa';
+import { FaShoppingCart, FaBars } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
-import type { HeaderProps } from '../types/types';
 import { Link } from 'react-router-dom';
 import Home from './Home';
 import { IoHome } from 'react-icons/io5';
-import { BiSolidCategory } from 'react-icons/bi';
 import { IoIosContact } from 'react-icons/io';
+
+interface HeaderProps {
+    toggleCart: () => void; 
+}
 
 const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,8 +19,8 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            const target = event.target as HTMLElement;  
-            if (isMenuOpen && !target.closest('.menu-container')) {
+            const target = event.target as HTMLElement | null;
+            if (isMenuOpen && target && !target.closest('.menu-container')) {
                 setIsMenuOpen(false);
             }
         };
@@ -27,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [isMenuOpen]);  
+    }, [isMenuOpen]);
 
     return (
         <header className="relative overflow-hidden">
@@ -45,49 +47,34 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                             className="w-96 p-2 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
                         />
                     </div>
-                    {/* Menú y botones */}
-                    <br/>
+                    {/* Botones */}
                     <div className="flex items-center space-x-2 md:space-x-4">
-                        {/*<button
-                            onClick={toggleMenu}
-                            aria-label="Abrir menú"
-                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
-                        >
-                            <FaBars className="inline-block mr-2" /> Categorías
-                        </button>
-                        <button
-                            onClick={() => navigate('/pages/login')} //modificar para que tome numero de whatsapp
-                            className="hidden sm:flex bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 items-center"
-                        >
-                            <FaWhatsapp className="inline-block mr-2" /> Whatsapp
-                        </button>*/}
                         <button
                             onClick={Home}
                             className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
                         >
-                            <IoHome className='mr-2'/>Inicio
+                            <IoHome className='mr-2' />Inicio
                         </button>
                         <button
                             onClick={toggleMenu}
                             aria-label="Abrir menú"
                             className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
                         >
-                            <FaBars className="inline-block mr-2"/>Categorias
+                            <FaBars className="inline-block mr-2" />Categorías
                         </button>
                         <button
                             onClick={toggleMenu}
-                            aria-label="Abrir menú"
+                            aria-label="Contacto"
                             className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
                         >
                             <IoIosContact className="inline-block mr-2" />Contacto
                         </button>
                         <button
-                            onClick={toggleCart}
+                            onClick={toggleCart} // Usando el prop para abrir/cerrar el carrito  
                             className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
                         >
                             <FaShoppingCart />
                         </button>
-                        
                     </div>
                 </div>
             </div>
@@ -95,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
             {/* Menú móvil (visible solo si está abierto) */}
             {isMenuOpen && (
                 <div className="absolute top-16 left-0 w-full bg-white text-purple-600 p-4 md:hidden menu-container">
-                    <button onClick={toggleMenu} className="text-lg">Cerrar</button>
+                    <button onClick={toggleMenu} className="text-lg mb-4">Cerrar</button>
                     <div className="mt-4 mb-2">
                         <input
                             type="text"
