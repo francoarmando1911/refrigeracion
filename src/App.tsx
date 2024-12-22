@@ -50,12 +50,12 @@ const App: React.FC = () => {
 
       {!isAuthPage && <Slider />}
 
-      <button
+      {/*<button
         onClick={() => addToCart(sampleProduct)}
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
       >
         Agregar Producto Ejemplo
-      </button>
+      </button>*/}
 
       {/*<Routes>
         <Route path='/' element={<Home />} />
