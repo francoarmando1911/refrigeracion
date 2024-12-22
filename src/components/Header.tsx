@@ -6,6 +6,8 @@ import type { HeaderProps } from '../types/types';
 import { Link } from 'react-router-dom';
 import Home from './Home';
 import { IoHome } from 'react-icons/io5';
+import { BiSolidCategory } from 'react-icons/bi';
+import { IoIosContact } from 'react-icons/io';
 
 const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,30 +31,24 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
 
     return (
         <header className="relative overflow-hidden">
-            <div className="bg-gradient-to-r from-[#000B54] to-purple-900 h-[500px] flex flex-col justify-between">
-                <div className="container mx-auto px-6 py-12">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-white text-center">Refrigeracion
-                        <br />
-                        en realidad digital
-                    </h1>
-                </div>
+            <div className="bg-gradient-to-r from-[#7ed40d] to-purple-900 h-[100px] flex flex-col justify-between">
                 {/* Logo */}
                 <div className="flex items-center justify-between p-4">
                     <Link to="/">
-                        <img src="/logo.png" alt="Logo" className="h-12 w-auto sm:h-16" />
+                        <img src="/1.png" alt="Logo" className="h-12 w-auto sm:h-16" />
                     </Link>
                     {/* Barra de búsqueda */}
                     <div className="flex-1 mx-4">
                         <input
                             type="text"
                             placeholder="Buscar productos..."
-                            className="w-full p-2 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                            className="w-96 p-2 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
                         />
                     </div>
                     {/* Menú y botones */}
                     <br/>
                     <div className="flex items-center space-x-2 md:space-x-4">
-                        <button
+                        {/*<button
                             onClick={toggleMenu}
                             aria-label="Abrir menú"
                             className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
@@ -64,19 +60,34 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                             className="hidden sm:flex bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 items-center"
                         >
                             <FaWhatsapp className="inline-block mr-2" /> Whatsapp
-                        </button>
-                        <button
-                            onClick={toggleCart}
-                            className="text-2xl hover:text-orange-700 transition duration-300 focus:outline-none"
-                        >
-                            <FaShoppingCart />
-                        </button>
+                        </button>*/}
                         <button
                             onClick={Home}
                             className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
                         >
-                            <IoHome />
+                            <IoHome className='mr-2'/>Inicio
                         </button>
+                        <button
+                            onClick={toggleMenu}
+                            aria-label="Abrir menú"
+                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
+                        >
+                            <FaBars className="inline-block mr-2"/>Categorias
+                        </button>
+                        <button
+                            onClick={toggleMenu}
+                            aria-label="Abrir menú"
+                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
+                        >
+                            <IoIosContact className="inline-block mr-2" />Contacto
+                        </button>
+                        <button
+                            onClick={toggleCart}
+                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
+                        >
+                            <FaShoppingCart />
+                        </button>
+                        
                     </div>
                 </div>
             </div>
