@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     }, [isMenuOpen]);
 
     return (
-        <header className="header fixed overflow-hidden"> {/*relative overflow-hidden*/}
+        <header className="relative overflow-hidden"> {/*relative overflow-hidden*/}
             <div className="bg-gradient-to-r from-[#7ed40d] to-purple-900 h-auto flex flex-col md:flex-row md:justify-between items-center p-4 space-y-4 md:space-y-0">
                 {/* Logo */}
                 <div className="flex justify-center md:justify-start">
@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                 </div>
             </div>
 
-            {/* Menú móvil */}
+            {/* Menú móvil de las categorias*/}
             {isMenuOpen && (
                 <div className="absolute top-16 left-0 w-full bg-white text-purple-600 p-4 md:hidden menu-container">
                     <button onClick={toggleMenu} className="text-lg mb-4">Cerrar</button>
