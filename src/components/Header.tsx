@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FaShoppingCart, FaBars } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import Home from './Home';
+import { useNavigate, Link } from 'react-router-dom';
 import { IoHome } from 'react-icons/io5';
 import { IoIosContact } from 'react-icons/io';
 
 interface HeaderProps {
-    toggleCart: () => void; 
+    toggleCart: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
@@ -32,54 +30,57 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     }, [isMenuOpen]);
 
     return (
-        <header className="relative overflow-hidden">
-            <div className="bg-gradient-to-r from-[#7ed40d] to-purple-900 h-[100px] flex flex-col justify-between">
+        <header className="header fixed overflow-hidden"> {/*relative overflow-hidden*/}
+            <div className="bg-gradient-to-r from-[#7ed40d] to-purple-900 h-auto flex flex-col md:flex-row md:justify-between items-center p-4 space-y-4 md:space-y-0">
                 {/* Logo */}
-                <div className="flex items-center justify-between p-4">
+                <div className="flex justify-center md:justify-start">
                     <Link to="/">
                         <img src="/1.png" alt="Logo" className="h-12 w-auto sm:h-16" />
                     </Link>
-                    {/* Barra de búsqueda */}
-                    <div className="flex-1 mx-4">
-                        <input
-                            type="text"
-                            placeholder="Buscar productos..."
-                            className="w-96 p-2 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                        />
-                    </div>
-                    {/* Botones */}
-                    <div className="flex items-center space-x-2 md:space-x-4">
-                        <button
-                            onClick={Home}
-                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
-                        >
-                            <IoHome className='mr-2' />Inicio
-                        </button>
-                        <button
-                            onClick={toggleMenu}
-                            aria-label="Abrir menú"
-                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
-                        >
-                            <FaBars className="inline-block mr-2" />Categorías
-                        </button>
-                        <button
-                            onClick={toggleMenu}
-                            aria-label="Contacto"
-                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
-                        >
-                            <IoIosContact className="inline-block mr-2" />Contacto
-                        </button>
-                        <button
-                            onClick={toggleCart} // Usando el prop para abrir/cerrar el carrito  
-                            className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center"
-                        >
-                            <FaShoppingCart />
-                        </button>
-                    </div>
+                </div>
+
+                {/* Barra de búsqueda */}
+                <div className="w-full md:w-auto flex justify-center">
+                    <input
+                        type="text"
+                        placeholder="Buscar productos..."
+                        className="w-10/12 md:w-96 p-2 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                    />
+                </div>
+
+                {/* Botones */}
+                <div className="flex flex-row justify-center items-center space-x-4">
+                    <button
+                        onClick={() => navigate('/')}
+                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                    >
+                        <IoHome />
+                    </button>
+                    <button
+                        onClick={toggleMenu}
+                        aria-expanded={isMenuOpen}
+                        aria-label="Abrir menú"
+                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                    >
+                        <FaBars />
+                    </button>
+                    <button
+                        onClick={() => navigate('/contact')}
+                        aria-label="Contacto"
+                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                    >
+                        <IoIosContact />
+                    </button>
+                    <button
+                        onClick={toggleCart}
+                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                    >
+                        <FaShoppingCart />
+                    </button>
                 </div>
             </div>
 
-            {/* Menú móvil (visible solo si está abierto) */}
+            {/* Menú móvil */}
             {isMenuOpen && (
                 <div className="absolute top-16 left-0 w-full bg-white text-purple-600 p-4 md:hidden menu-container">
                     <button onClick={toggleMenu} className="text-lg mb-4">Cerrar</button>
@@ -97,9 +98,9 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                         <VscAccount className="inline-block mr-2" /> Ingresar
                     </button>
                     <ul className="mt-2 space-y-2">
-                        <li><a href="#" className="block">Categoría 1</a></li>
-                        <li><a href="#" className="block">Categoría 2</a></li>
-                        <li><a href="#" className="block">Categoría 3</a></li>
+                        <li><Link to="/category1" className="block">Categoría 1</Link></li>
+                        <li><Link to="/category2" className="block">Categoría 2</Link></li>
+                        <li><Link to="/category3" className="block">Categoría 3</Link></li>
                     </ul>
                 </div>
             )}
