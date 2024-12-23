@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useCart } from './hooks/useCart';
 import './index.css';
 import Header from './components/Header';
@@ -50,6 +50,7 @@ const App: React.FC = () => {
 
       {!isAuthPage && <Slider />}
 
+      <Home/>
       {/*<button
         onClick={() => addToCart(sampleProduct)}
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -57,11 +58,6 @@ const App: React.FC = () => {
         Agregar Producto Ejemplo
       </button>*/}
 
-      {/*<Routes>
-        <Route path='/' element={<Home />} />
-        <Route path="/pages/login" element={<LoginPage />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>*/}
 
       <Footer />
     </>
