@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaShoppingCart, FaBars } from 'react-icons/fa';
+import { FaShoppingCart, FaBars, FaSearch } from 'react-icons/fa';
 import { VscAccount } from 'react-icons/vsc';
 import { useNavigate, Link } from 'react-router-dom';
 import { IoHome } from 'react-icons/io5';
@@ -17,11 +17,14 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
+            console.log('Clicked element:', event.target);
             const target = event.target as HTMLElement | null;
             if (isMenuOpen && target && !target.closest('.menu-container')) {
+                console.log('Closing menu');
                 setIsMenuOpen(false);
             }
         };
+
 
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
@@ -30,8 +33,8 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     }, [isMenuOpen]);
 
     return (
-        <header className="relative overflow-hidden"> {/*relative overflow-hidden*/}
-            <div className="bg-gradient-to-r from-[#7ed40d] to-purple-900 h-auto flex flex-col md:flex-row md:justify-between items-center p-4 space-y-4 md:space-y-0">
+        <header className="relative overflow-hidden"> 
+            <div className="bg-teal-400 h-auto flex flex-col md:flex-row md:justify-between items-center p-4 space-y-4 md:space-y-0">
                 {/* Logo */}
                 <div className="flex justify-center md:justify-start">
                     <Link to="/">
@@ -44,8 +47,11 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                     <input
                         type="text"
                         placeholder="Buscar productos..."
-                        className="w-10/12 md:w-96 p-2 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                        className="w-10/12 md:w-96 p-2 rounded-2xl text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
                     />
+                    <button className="p-2 text-black hover:bg-blue-600">
+                        <FaSearch />
+                    </button>
                 </div>
 
                 {/* Botones */}
@@ -82,26 +88,52 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
 
             {/* Menú móvil de las categorias*/}
             {isMenuOpen && (
-                <div className="absolute top-16 left-0 w-full bg-white text-purple-600 p-4 md:hidden menu-container">
+                <div className="sticky top-16 left-0  bg-black text-purple-600 p-4 md:hidden menu-container">
                     <button onClick={toggleMenu} className="text-lg mb-4">Cerrar</button>
-                    <div className="mt-4 mb-2">
-                        <input
-                            type="text"
-                            placeholder="Buscar productos..."
-                            className="w-full p-2 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                        />
-                    </div>
+                    
                     <button
                         onClick={() => navigate('/pages/login')}
                         className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
                     >
-                        <VscAccount className="inline-block mr-2" /> Ingresar
+                        <VscAccount className="inline-block mr-2" /> Refrigeracion
                     </button>
-                    <ul className="mt-2 space-y-2">
-                        <li><Link to="/category1" className="block">Categoría 1</Link></li>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
+                    >
+                        <VscAccount className="inline-block mr-2" /> Aire Acondicionado
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
+                    >
+                        <VscAccount className="inline-block mr-2" /> Caños de cobre y Accesorios
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
+                    >
+                        <VscAccount className="inline-block mr-2" /> Gases Refrigerantes
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
+                    >
+                        <VscAccount className="inline-block mr-2" /> Electricidad
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
+                    >
+                        <VscAccount className="inline-block mr-2" /> Herramientas
+                    </button>
+
+
+                    {/*<ul className="mt-2 space-y-2">
+                        <li><Link to="/category1" className="block text-black">Categoría 1</Link></li>
                         <li><Link to="/category2" className="block">Categoría 2</Link></li>
                         <li><Link to="/category3" className="block">Categoría 3</Link></li>
-                    </ul>
+                    </ul>*/}
                 </div>
             )}
         </header>
