@@ -30,28 +30,21 @@ const Home: React.FC = () => {
         <div className="flex space-x-4">
 
           <div className="min-w-[200px] flex-shrink-0 p-4 bg-white text-black text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-300 hover:shadow-xl">
-            <h2 className="text-xl font-semibold">Celulares</h2>
+            <h2 className="text-xl font-semibold">Refrigeracion</h2>
+            <p>Familiar, comercial e industrial</p>
             <img src="ruta-de-la-imagen-1.jpg" alt="Celulares" className="w-full h-32 object-cover mt-2 rounded-lg" />
           </div>
 
           <div className="min-w-[200px] flex-shrink-0 p-4 bg-yellow-500 text-white text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-red-600 hover:shadow-xl">
-            <h2 className="text-xl font-semibold">Electrodomesticos</h2>
+            <h2 className="text-xl font-semibold">Aires Acondicionados</h2>
+            <p>Repuestos, accesorios y equipos.</p>
             <img src="ruta-de-la-imagen-2.jpg" alt="Electrodomesticos" className="w-full h-32 object-cover mt-2 rounded-lg" />
           </div>
 
           <div className="min-w-[200px] flex-shrink-0 p-4 bg-purple-500 text-white text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-red-600 hover:shadow-xl">
-            <h2 className="text-xl font-semibold">Heladeras y Freezers</h2>
+            <h2 className="text-xl font-semibold">Linea blanca</h2>
+            <p>Lavarropas, secarropas, microondas y mas.</p>
             <img src="ruta-de-la-imagen-3.jpg" alt="Heladeras y Freezers" className="w-full h-32 object-cover mt-2 rounded-lg" />
-          </div>
-
-          <div className="min-w-[200px] flex-shrink-0 p-4 bg-teal-500 text-white text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-red-600 hover:shadow-xl">
-            <h2 className="text-xl font-semibold">Colchones</h2>
-            <img src="ruta-de-la-imagen-4.jpg" alt="Colchones" className="w-full h-32 object-cover mt-2 rounded-lg" />
-          </div>
-
-          <div className="min-w-[200px] flex-shrink-0 p-4 bg-teal-500 text-white text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-red-600 hover:shadow-xl">
-            <h2 className="text-xl font-semibold">Climatización</h2>
-            <img src="ruta-de-la-imagen-5.jpg" alt="Climatización" className="w-full h-32 object-cover mt-2 rounded-lg" />
           </div>
 
         </div>
