@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col items-center space-y-8 p-6">
-      <h1 className="text-3xl font-bold text-center md:text-4xl">Bienvenido a nuestra tienda</h1>
-
+    
+      {/* Primera Sección */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
         {/* Box 1 */}
         <Link to="/productos" aria-label="Ver productos" className="p-6 bg-blue-500 text-white text-center rounded-lg shadow-lg hover:bg-blue-600 hover:scale-105 transition transform duration-200 ease-in-out">
@@ -26,31 +26,48 @@ const Home: React.FC = () => {
         </Link>
       </div>
 
-      <div className="w-full max-w-5xl overflow-x-auto p-4">
-        <div className="flex space-x-4">
+      <h1 className="text-3xl font-bold text-center md:text-4xl">Bienvenido a nuestra tienda</h1>
 
-          <div className="min-w-[200px] flex-shrink-0 p-4 bg-white text-black text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-gray-300 hover:shadow-xl">
+      {/* Segunda Sección */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
+        <div className="relative p-6 bg-purple-500 text-white text-center rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+          <img
+            src="/productos/slider4.png"
+            alt="Heladeras y Freezers"
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+          <div className="relative z-10">
             <h2 className="text-xl font-semibold">Refrigeracion</h2>
-            <p>Familiar, comercial e industrial</p>
-            <img src="ruta-de-la-imagen-1.jpg" alt="Celulares" className="w-full h-32 object-cover mt-2 rounded-lg" />
+            <p>Familiar, comercial e industrial.</p>
           </div>
+        </div>
 
-          <div className="min-w-[200px] flex-shrink-0 p-4 bg-yellow-500 text-white text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-red-600 hover:shadow-xl">
-            <h2 className="text-xl font-semibold">Aires Acondicionados</h2>
-            <p>Repuestos, accesorios y equipos.</p>
-            <img src="ruta-de-la-imagen-2.jpg" alt="Electrodomesticos" className="w-full h-32 object-cover mt-2 rounded-lg" />
+        <div className="relative p-6 bg-purple-500 text-white text-center rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+          <img
+            src="/productos/slider4.png"
+            alt="Heladeras y Freezers"
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+          <div className="relative z-10">
+            <h2 className="text-xl font-semibold">Aire Acondicionados</h2>
+            <p>Repuestos, accesorios y equipos</p>
           </div>
+        </div>
 
-          <div className="min-w-[200px] flex-shrink-0 p-4 bg-purple-500 text-white text-center rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:bg-red-600 hover:shadow-xl">
-            <h2 className="text-xl font-semibold">Linea blanca</h2>
-            <p>Lavarropas, secarropas, microondas y mas.</p>
-            <img src="ruta-de-la-imagen-3.jpg" alt="Heladeras y Freezers" className="w-full h-32 object-cover mt-2 rounded-lg" />
+        <div className="relative p-6 bg-purple-500 text-white text-center rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+          <img
+            src="/productos/slider4.png"
+            alt="Heladeras y Freezers"
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+          <div className="relative z-10">
+            <h2 className="text-xl font-semibold">Línea Blanca</h2>
+            <p>Lavarropas, secarropas, microondas y más.</p>
           </div>
-
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Home;
