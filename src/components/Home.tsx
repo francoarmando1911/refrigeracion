@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col items-center space-y-8 p-6">
-    
+
       {/* Primera Sección */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
         {/* Box 1 */}
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
 
       {/* Segunda Sección */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
-        <div className="relative h-72 p-6 bg-purple-500 text-white text-center rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+        <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
           <img
             src="/productos/slider4.png"
             alt="Heladeras y Freezers"
@@ -43,8 +43,7 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-
-        <div className="relative p-6 bg-purple-500 text-white text-center rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+        <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
           <img
             src="/productos/slider4.png"
             alt="Heladeras y Freezers"
@@ -57,7 +56,7 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative p-6 bg-purple-500 text-white text-center rounded-lg shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+        <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
           <img
             src="/productos/slider4.png"
             alt="Heladeras y Freezers"
@@ -69,7 +68,6 @@ const Home: React.FC = () => {
             <p>Lavarropas, secarropas, microondas y más.</p>
           </div>
         </div>
-        
       </div>
     </div>
   );

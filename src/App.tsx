@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Slider from './components/Slider';
 import CartComponent from './components/CartComponent';
+import First from './components/First';
 //import { Product } from './types/types';
 
 const App: React.FC = () => {
@@ -24,6 +25,8 @@ const App: React.FC = () => {
 
   return (
     <>
+
+      <First />
       <Header
         toggleCart={toggleCart}
       />
