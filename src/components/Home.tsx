@@ -1,7 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+interface Product {
+  title: string;
+  price: number;
+  imageUrl: string;
+  discount?: number;
+}
+
+//Hacer un package y agregar esto en otro lado
+const products: Product[] = [
+  { title: 'Microondas', price: 999.99, imageUrl: '/productos/microondas.png', discount: 20 },
+  { title: 'Aire Acondicionado', price: 599.99, imageUrl: '/productos/acondicionado.png', discount: 10 },
+  { title: 'Ventilador', price: 299.99, imageUrl: '/productos/ventilador.png', discount: 15 },
+  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
+  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
+  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
+  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
+  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15},
+];  
+
 const Home: React.FC = () => {
+
   return (
     <div className="flex flex-col items-center space-y-8 p-6">
 
@@ -71,6 +91,23 @@ const Home: React.FC = () => {
       </div>
 
       <h1 className="text-3xl font-bold text-center md:text-4xl">Ofertas Imperdibles</h1>
+
+      <div className="w-full overflow-x-auto py-2">
+        <div className="flex space-x-4 px-4">
+          {products.map((product, index) => (
+            <div key={index} className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden">
+              <img src={product.imageUrl} alt={product.title} className="w-full h-40 object-cover" />
+              <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">
+                {product.discount}%
+              </div>
+              <div className="p-4">
+                <h2 className="text-lg font-bold">{product.title}</h2>
+                <p className="text-gray-700">${product.price.toFixed(2)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>  
 
     </div>
   );
