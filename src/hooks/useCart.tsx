@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { products } from '../data/db';
+import { products } from '../data/discounts';
 import type { Product, CartItem, ProductID } from '../types/types';
 
 const initialCart = (): CartItem[] => {

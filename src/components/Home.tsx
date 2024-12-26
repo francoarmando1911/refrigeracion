@@ -1,26 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-interface Product {
-  title: string;
-  price: number;
-  imageUrl: string;
-  discount?: number;
-}
-
-//Hacer un package y agregar esto en otro lado
-const products: Product[] = [
-  { title: 'Microondas', price: 999.99, imageUrl: '/productos/microondas.png', discount: 20 },
-  { title: 'Aire Acondicionado', price: 599.99, imageUrl: '/productos/acondicionado.png', discount: 10 },
-  { title: 'Ventilador', price: 299.99, imageUrl: '/productos/ventilador.png', discount: 15 },
-  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
-  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
-  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
-  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15 },
-  { title: 'Lavarropas', price: 299.99, imageUrl: '/productos/lavarropas.png', discount: 15},
-];  
+import { useCart } from '../hooks/useCart';
+import { products } from '../data/discounts';
 
 const Home: React.FC = () => {
+
+  const { addToCart } = useCart('products');   
 
   return (
     <div className="flex flex-col items-center space-y-8 p-6">
@@ -93,21 +78,38 @@ const Home: React.FC = () => {
       <h1 className="text-3xl font-bold text-center md:text-4xl">Ofertas Imperdibles</h1>
 
       <div className="w-full overflow-x-auto py-2">
-        <div className="flex space-x-4 px-4">
+        <div className="flex space-x-4 px-4 sm:space-x-6 lg:space-x-8">
           {products.map((product, index) => (
-            <div key={index} className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden">
-              <img src={product.imageUrl} alt={product.title} className="w-full h-40 object-cover" />
-              <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">
-                {product.discount}%
-              </div>
-              <div className="p-4">
-                <h2 className="text-lg font-bold">{product.title}</h2>
+            <div
+              key={index}
+              className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden flex flex-col"
+            >
+              <img
+                src={product.imageUrl}
+                alt={product.name}
+                className="w-full h-40 object-cover"
+              />
+              {product.discount && (
+                <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">
+                  {product.discount}%
+                </div>
+              )}
+              <div className="p-4 flex-grow">
+                <h2 className="text-lg font-bold">{product.name}</h2>
                 <p className="text-gray-700">${product.price.toFixed(2)}</p>
+              </div>
+              <div className="p-4 flex justify-center">
+                <button
+                  onClick={() => addToCart(product)}
+                  className="w-full bg-green-500 text-white rounded hover:bg-green-600 transition duration-200 py-2"
+                >
+                  Agregar Producto
+                </button>
               </div>
             </div>
           ))}
         </div>
-      </div>  
+      </div>
 
     </div>
   );
