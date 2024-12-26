@@ -49,9 +49,9 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-300 py-4">
+            <div className="bg-[#000B54] py-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <p className="text-center text-gray-500 text-sm">
+                    <p className="text-center text-white text-sm">
                         © 2024 Intra Software. Todos los derechos reservados ©.
                     </p>
                 </div>

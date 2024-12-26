@@ -13,19 +13,42 @@ const Home: React.FC = () => {
       {/* Primera Sección */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
         {/* Box 1 */}
-        <Link to="/productos" aria-label="Ver productos" className="p-6 bg-blue-500 text-white text-center rounded-lg shadow-lg hover:bg-blue-600 hover:scale-105 transition transform duration-200 ease-in-out">
+        <Link
+          to="/contacto"
+          aria-label="Contacto"
+          className="link-box p-6 text-white text-center rounded-lg shadow-lg hover:scale-105 transition transform duration-200 ease-in-out"
+          style={{
+            backgroundImage: 'url("/electrod1.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
           <h2 className="text-xl font-semibold">Ver Productos</h2>
           <p>Explora nuestra variedad de productos disponibles.</p>
-        </Link>
+        </Link> 
 
         {/* Box 2 */}
-        <Link to="/ofertas" aria-label="Ver ofertas" className="p-6 bg-green-500 text-white text-center rounded-lg shadow-lg hover:bg-green-600 hover:scale-105 transition transform duration-200 ease-in-out">
-          <h2 className="text-xl font-semibold">Ofertas Especiales</h2>
+        <Link
+          to="/contacto"
+          aria-label="Contacto"
+          className="link-box p-6 text-white text-center rounded-lg shadow-lg hover:scale-105 transition transform duration-200 ease-in-out"
+          style={{
+            backgroundImage: 'url("/electrod1.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          <h2 className="text-xl font-semibold">Ofertas especiales</h2>
           <p>No te pierdas nuestras ofertas exclusivas.</p>
-        </Link>
+        </Link> 
 
         {/* Box 3 */}
-        <Link to="/contacto" aria-label="Contacto" className="p-6 bg-orange-500 text-white text-center rounded-lg shadow-lg hover:bg-orange-600 hover:scale-105 transition transform duration-200 ease-in-out">
+        <Link
+          to="/contacto"
+          aria-label="Contacto"
+          className="p-6 text-white text-center rounded-lg shadow-lg hover:scale-105 transition transform duration-200 ease-in-out"
+          style={{ backgroundImage: 'url("/1.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
           <h2 className="text-xl font-semibold">Contacto</h2>
           <p>Ponte en contacto con nosotros para más información.</p>
         </Link>
@@ -57,7 +80,7 @@ const Home: React.FC = () => {
           <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full">
             <h2 className="text-xl font-semibold">Aire Acondicionados</h2>
-            <p>Repuestos, accesorios y equipos</p>
+            <p>Repuestos, accesorios y equipos.</p>
           </div>
         </div>
 
@@ -103,7 +126,7 @@ const Home: React.FC = () => {
                   onClick={() => addToCart(product)}
                   className="w-full bg-red-600 text-white rounded-xl hover:bg-red-700 transition duration-200 py-2"
                 >
-                  Agregar Producto
+                  Agregar
                 </button>
               </div>
             </div>
