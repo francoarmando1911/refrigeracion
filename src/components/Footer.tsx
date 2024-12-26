@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
         <footer className="bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg rounded-t-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="flex flex-col md:flex-row justify-between gap-8">
-                    <div className="space-y-4 transition-all duration-300 hover:transform hover:scale-105">
+                    <div className="space-y-4 transition-all duration-300 hover:transform hover:scale-105 ">
                         <h3 className="text-lg font-semibold text-gray-900">Sobre nosotros</h3>
                         <p className="text-gray-600">
                             Somos líderes en el mercado de electrodomésticos, refrigeracion y aires acondicionados ofreciendo productos

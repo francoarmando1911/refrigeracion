@@ -90,7 +90,7 @@ const Home: React.FC = () => {
                 className="w-full h-40 object-cover"
               />
               {product.discount && (
-                <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">
+                <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-lg">
                   {product.discount}%
                 </div>
               )}
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
               <div className="p-4 flex justify-center">
                 <button
                   onClick={() => addToCart(product)}
-                  className="w-full bg-green-500 text-white rounded hover:bg-green-600 transition duration-200 py-2"
+                  className="w-full bg-red-600 text-white rounded-xl hover:bg-red-700 transition duration-200 py-2"
                 >
                   Agregar Producto
                 </button>

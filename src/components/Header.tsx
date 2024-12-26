@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                 <div className="flex flex-row justify-center items-center space-x-4">
                     <button
                         onClick={() => navigate('/')}
-                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                        className="bg-white text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
                     >
                         <IoHome />
                     </button>
@@ -66,20 +66,20 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                         onClick={toggleMenu}
                         aria-expanded={isMenuOpen}
                         aria-label="Abrir menú"
-                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                        className="bg-white text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
                     >
                         <FaBars />
                     </button>
                     <button
                         onClick={() => navigate('/contact')}
                         aria-label="Contacto"
-                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                        className="bg-white text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
                     >
                         <IoIosContact />
                     </button>
                     <button
                         onClick={toggleCart}
-                        className="bg-white text-orange-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
+                        className="bg-white text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300"
                     >
                         <FaShoppingCart />
                     </button>
