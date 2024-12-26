@@ -36,7 +36,7 @@ const Home: React.FC = () => {
             alt="Heladeras y Freezers"
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
-          <div className="absolute inset-0 bg-black opacity-50 z-5"></div>
+          <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full">
             <h2 className="text-xl font-semibold">Refrigeración</h2>
             <p>Familiar, comercial e industrial.</p>
@@ -45,11 +45,11 @@ const Home: React.FC = () => {
 
         <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
           <img
-            src="/productos/slider4.png"
+            src="/productos/aire1.png"
             alt="Heladeras y Freezers"
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
-          <div className="absolute inset-0 bg-black opacity-50 z-5"></div>
+          <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full">
             <h2 className="text-xl font-semibold">Aire Acondicionados</h2>
             <p>Repuestos, accesorios y equipos</p>
@@ -58,11 +58,11 @@ const Home: React.FC = () => {
 
         <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
           <img
-            src="/productos/slider4.png"
+            src="/productos/blanca1.png"
             alt="Heladeras y Freezers"
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
-          <div className="absolute inset-0 bg-black opacity-50 z-5"></div>
+          <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
           <div className="relative z-10 flex flex-col items-center justify-center h-full">
             <h2 className="text-xl font-semibold">Línea Blanca</h2>
             <p>Lavarropas, secarropas, microondas y más.</p>
