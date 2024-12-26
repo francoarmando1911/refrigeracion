@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 h-auto flex flex-col md:flex-row md:justify-between items-center p-4 space-y-4 md:space-y-0">
                 {/* Logo */}
                 <div className="flex justify-center md:justify-start">
-                    <Link to="/">
+                    <Link to="/components/Home">
                         <img src="/logo3.png" alt="Logo" className="h-12 w-auto sm:h-20" />
                     </Link>
                 </div>

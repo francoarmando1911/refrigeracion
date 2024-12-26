@@ -69,6 +69,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <h1 className="text-3xl font-bold text-center md:text-4xl">Ofertas Imperdibles</h1>
+
     </div>
   );
 };
