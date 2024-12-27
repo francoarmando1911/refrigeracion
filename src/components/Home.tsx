@@ -119,7 +119,7 @@ const Home: React.FC = () => {
               )}
               <div className="p-4 flex-grow">
                 <h2 className="text-lg font-bold">{product.name}</h2>
-                <p className="text-gray-700">${product.price.toFixed(2)}</p>
+                <p className="text-gray-700 font-semibold">${product.price}</p>
               </div>
               <div className="p-4 flex justify-center">
                 <button
