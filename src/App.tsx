@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
 
+  //Funcion para ver el carrito
   const toggleCart = () => {
     setShowCart(prev => !prev);
   };
