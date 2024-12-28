@@ -14,14 +14,10 @@ const Home: React.FC = () => {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
         {/* Box 1 */}
         <Link
-          to="/contacto"
+          to="/Refrigeracion"
           aria-label="Contacto"
-          className="link-box p-6 text-white text-center rounded-lg shadow-lg hover:scale-105 transition transform duration-200 ease-in-out"
-          style={{
-            backgroundImage: 'url("/electrod1.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
+          className="bg-red-700 link-box p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
+          
         >
           <h2 className="text-xl font-semibold">Ver Productos</h2>
           <p>Explora nuestra variedad de productos disponibles.</p>
@@ -31,12 +27,7 @@ const Home: React.FC = () => {
         <Link
           to="/contacto"
           aria-label="Contacto"
-          className="link-box p-6 text-white text-center rounded-lg shadow-lg hover:scale-105 transition transform duration-200 ease-in-out"
-          style={{
-            backgroundImage: 'url("/electrod1.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
+          className="bg-red-700 link-box p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
         >
           <h2 className="text-xl font-semibold">Ofertas especiales</h2>
           <p>No te pierdas nuestras ofertas exclusivas.</p>
@@ -46,8 +37,7 @@ const Home: React.FC = () => {
         <Link
           to="/contacto"
           aria-label="Contacto"
-          className="p-6 text-white text-center rounded-lg shadow-lg hover:scale-105 transition transform duration-200 ease-in-out"
-          style={{ backgroundImage: 'url("/1.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}
+          className="bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
         >
           <h2 className="text-xl font-semibold">Contacto</h2>
           <p>Ponte en contacto con nosotros para más información.</p>
