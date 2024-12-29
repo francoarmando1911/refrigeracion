@@ -16,32 +16,59 @@ const Home: React.FC = () => {
         <Link
           to="/Refrigeracion"
           aria-label="Refrigeracion"
-          className="bg-red-700 link-box p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
-          
+          className="link-box p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
+          style={{
+            backgroundImage: "url('/electrod2.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          <h2 className="text-xl font-semibold">Ver Productos</h2>
-          <p>Explora nuestra variedad de productos disponibles.</p>
-        </Link> 
+          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+          <div className="relative z-10">
+            <h2 className="text-xl font-semibold">Ver Productos</h2>
+            <p>Explora nuestra variedad de productos disponibles.</p>
+          </div>
+        </Link>
 
         {/* Box 2 */}
         <Link
           to="/contacto"
           aria-label="Contacto"
-          className="bg-red-700 link-box p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
+          className="link-box bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
+          style={{
+            backgroundImage: "url('/electrod2.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          <h2 className="text-xl font-semibold">Ofertas especiales</h2>
-          <p>No te pierdas nuestras ofertas exclusivas.</p>
-        </Link> 
+          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+          <div className="relative z-10">
+            <h2 className="text-xl font-semibold">Ofertas especiales</h2>
+            <p>No te pierdas nuestras ofertas exclusivas.</p>
+          </div>
+        </Link>
 
         {/* Box 3 */}
         <Link
           to="/Contacto"
           aria-label="Contacto"
-          className="bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
+          className="link-box bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
+          style={{
+            backgroundImage: "url('/electrod2.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
-          <h2 className="text-xl font-semibold">Contacto</h2>
-          <p>Ponte en contacto con nosotros para más información.</p>
+          <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+          <div className="relative z-10">
+            <h2 className="text-xl font-semibold">Contacto</h2>
+            <p>Ponte en contacto con nosotros para más información.</p>
+          </div>
         </Link>
+
       </div>
 
       <h1 className="text-3xl font-bold text-center md:text-4xl">Bienvenido a nuestra tienda</h1>

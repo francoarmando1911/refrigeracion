@@ -9,6 +9,7 @@ import Slider from './components/Slider';
 import CartComponent from './components/CartComponent';
 import First from './components/First';
 import Refrigeracion from './pages/Refrigeracion';
+import AireAcondicionado from './pages/AireAcondicionado';
 
 const App: React.FC = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('productos');
@@ -36,12 +37,13 @@ const App: React.FC = () => {
         />
       )}
 
-      {!isAuthPage && <Slider />}
+      {location.pathname === '/' && <Slider />}
 
       <main className="flex-grow p-4 mt-[10px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Refrigeracion" element={<Refrigeracion />} />
+          <Route path="/AireAcondicionado" element={<AireAcondicionado />} />
         </Routes>
       </main>
 

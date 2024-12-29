@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FaShoppingCart, FaBars, FaSearch } from 'react-icons/fa';
-import { VscAccount } from 'react-icons/vsc';
+import { FaShoppingCart, FaBars, FaSearch, FaTools } from 'react-icons/fa';
 import { useNavigate, Link } from 'react-router-dom';
 import { IoHome } from 'react-icons/io5';
 import { IoIosContact } from 'react-icons/io';
+import { CgSmartHomeBoiler, CgSmartHomeRefrigerator } from 'react-icons/cg';
+import { GiSplitCross } from 'react-icons/gi';
+import { TbWavesElectricity } from 'react-icons/tb';
+import { SiProtools } from 'react-icons/si';
 
 interface HeaderProps {
     toggleCart: () => void;
@@ -89,54 +92,53 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
 
             {/* Menú móvil de las categorias*/}
             {isMenuOpen && (
-                <div className="sticky top-16 left-0  bg-black text-purple-600 p-4 md:hidden menu-container">
-                    <button onClick={toggleMenu} className="text-lg mb-4">Cerrar</button>
-                    
+                <div className="sticky top-16 left-0 bg-slate-200 text-red-700 p-4 menu-container md:top-0 md:static md:bg-white md:flex md:flex-col md:items-start">
                     <button
-                        onClick={() => navigate('/pages/login')}
-                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
+                        onClick={toggleMenu}
+                        className="text-lg mb-4 md:hidden"
                     >
-                        <VscAccount className="inline-block mr-2" /> Refrigeracion
-                    </button>
-                    <button
-                        onClick={() => navigate('/pages/login')}
-                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
-                    >
-                        <VscAccount className="inline-block mr-2" /> Aire Acondicionado
-                    </button>
-                    <button
-                        onClick={() => navigate('/pages/login')}
-                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
-                    >
-                        <VscAccount className="inline-block mr-2" /> Caños de cobre y Accesorios
-                    </button>
-                    <button
-                        onClick={() => navigate('/pages/login')}
-                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
-                    >
-                        <VscAccount className="inline-block mr-2" /> Gases Refrigerantes
-                    </button>
-                    <button
-                        onClick={() => navigate('/pages/login')}
-                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
-                    >
-                        <VscAccount className="inline-block mr-2" /> Electricidad
-                    </button>
-                    <button
-                        onClick={() => navigate('/pages/login')}
-                        className="w-full bg-white text-purple-600 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
-                    >
-                        <VscAccount className="inline-block mr-2" /> Herramientas
+                        Cerrar
                     </button>
 
-
-                    {/*<ul className="mt-2 space-y-2">
-                        <li><Link to="/category1" className="block text-black">Categoría 1</Link></li>
-                        <li><Link to="/category2" className="block">Categoría 2</Link></li>
-                        <li><Link to="/category3" className="block">Categoría 3</Link></li>
-                    </ul>*/}
+                    <button
+                        onClick={() => navigate('/Refrigeracion')}
+                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                    >
+                        <CgSmartHomeRefrigerator className="inline-block mr-2" /> Refrigeracion
+                    </button>
+                    <button
+                        onClick={() => navigate('/AireAcondicionado')}
+                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                    >
+                        <GiSplitCross className="inline-block mr-2" /> Aire Acondicionado
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                    >
+                        <SiProtools className="inline-block mr-2" /> Caños de cobre y Accesorios
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                    >
+                        <CgSmartHomeBoiler className="inline-block mr-2" /> Gases Refrigerantes
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                    >
+                        <TbWavesElectricity className="inline-block mr-2" /> Electricidad
+                    </button>
+                    <button
+                        onClick={() => navigate('/pages/login')}
+                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                    >
+                        <FaTools className="inline-block mr-2" /> Herramientas
+                    </button>
                 </div>
             )}
+
         </header>
     );
 };
