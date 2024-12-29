@@ -35,9 +35,10 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     return (
         <header className="relative sticky top-0 z-10 overflow-hidden"> 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 h-auto flex flex-col md:flex-row md:justify-between items-center p-4 space-y-4 md:space-y-0">
+                
                 {/* Logo */}
                 <div className="flex justify-center md:justify-start">
-                    <Link to="/components/Home">
+                    <Link to="/">
                         <img src="/logo3.png" alt="Logo" className="h-12 w-auto sm:h-20" />
                     </Link>
                 </div>

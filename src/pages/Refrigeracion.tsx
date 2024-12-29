@@ -1,7 +1,12 @@
+import React from 'react';
 
-
-export default function Refrigeracion() {
+const Refrigeración: React.FC = () => {
   return (
-    <div>Refrigeracion</div>
-  )
-}
+    <div className="p-4">
+      <h1 className="text-2xl font-bold">Página de Refrigeración</h1>
+      <p>Explora todos los productos de refrigeración aquí.</p>
+    </div>
+  );
+};
+
+export default Refrigeración;

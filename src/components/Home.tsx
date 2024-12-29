@@ -15,7 +15,7 @@ const Home: React.FC = () => {
         {/* Box 1 */}
         <Link
           to="/Refrigeracion"
-          aria-label="Contacto"
+          aria-label="Refrigeracion"
           className="bg-red-700 link-box p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
           
         >
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
 
         {/* Box 3 */}
         <Link
-          to="/contacto"
+          to="/Contacto"
           aria-label="Contacto"
           className="bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out"
         >
