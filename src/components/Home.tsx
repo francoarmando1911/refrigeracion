@@ -37,7 +37,7 @@ const Home: React.FC = () => {
           aria-label="Contacto"
           className="link-box bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
           style={{
-            backgroundImage: "url('/electrod2.png')",
+            backgroundImage: "url('/electrod3.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
           aria-label="Contacto"
           className="link-box bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
           style={{
-            backgroundImage: "url('/electrod2.png')",
+            backgroundImage: "url('/wpp.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
