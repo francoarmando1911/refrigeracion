@@ -10,6 +10,9 @@ import CartComponent from './components/CartComponent';
 import First from './components/First';
 import Refrigeracion from './pages/Refrigeracion';
 import AireAcondicionado from './pages/AireAcondicionado';
+import Cobre from './pages/Cobre';
+import Gas from './pages/Gas';
+import Herramientas from './pages/Herramientas';
 
 const App: React.FC = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('productos');
@@ -44,6 +47,9 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/Refrigeracion" element={<Refrigeracion />} />
           <Route path="/AireAcondicionado" element={<AireAcondicionado />} />
+          <Route path="/Cobre" element={<Cobre />} />
+          <Route path="/Gas" element={<Gas />} />
+          <Route path="/Herramientas" element={<Herramientas />} />
         </Routes>
       </main>
 

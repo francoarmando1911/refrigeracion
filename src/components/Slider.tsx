@@ -10,24 +10,20 @@ type Slide = {
 const slides: Slide[] = [
   {
     id: 1,
-    image: "/productos/slider4.png",
+    image: "/productos/sliderComponentes.png",
     title: "Slider1",
   },
   {
     id: 2,
-    image: "/productos/slider2.png",
+    image: "/productos/sliderElectrod.png",
     title: "Slider2",
   },
   {
     id: 3,
-    image: "/productos/slider3.png",
+    image: "/productos/sliderGas.png",
     title: "Slider3",
   },
-  {
-    id: 4,
-    image: "/productos/slider1.png",
-    title: "Slider3",
-  },
+
 ];
 
 const Slider: React.FC = () => {
@@ -99,7 +95,7 @@ const Slider: React.FC = () => {
                 <img
                   src={slide.image}
                   alt={slide.title}
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full h-full "
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50 text-white">
                   <h3 className="text-xl font-semibold">{slide.title}</h3>
