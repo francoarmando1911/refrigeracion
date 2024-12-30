@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { FaShoppingCart, FaBars, FaSearch, FaTools } from 'react-icons/fa';
-import { useNavigate, Link } from 'react-router-dom';
 import { IoHome } from 'react-icons/io5';
 import { IoIosContact } from 'react-icons/io';
 import { CgSmartHomeBoiler, CgSmartHomeRefrigerator } from 'react-icons/cg';
@@ -14,8 +14,13 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation(); 
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location]); 
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
