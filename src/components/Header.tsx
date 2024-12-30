@@ -5,7 +5,6 @@ import { IoHome } from 'react-icons/io5';
 import { IoIosContact } from 'react-icons/io';
 import { CgSmartHomeBoiler, CgSmartHomeRefrigerator } from 'react-icons/cg';
 import { GiSplitCross } from 'react-icons/gi';
-import { TbWavesElectricity } from 'react-icons/tb';
 import { SiProtools } from 'react-icons/si';
 
 interface HeaderProps {
