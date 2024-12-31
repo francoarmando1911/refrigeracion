@@ -11,7 +11,6 @@ import First from './components/First';
 import Refrigeracion from './pages/Refrigeracion';
 import AireAcondicionado from './pages/AireAcondicionado';
 import Cobre from './pages/Cobre';
-import Gas from './pages/Gas';
 import Herramientas from './pages/Herramientas';
 
 const App: React.FC = () => {
@@ -48,7 +47,6 @@ const App: React.FC = () => {
           <Route path="/Refrigeracion" element={<Refrigeracion />} />
           <Route path="/AireAcondicionado" element={<AireAcondicionado />} />
           <Route path="/Cobre" element={<Cobre />} />
-          <Route path="/Gas" element={<Gas />} />
           <Route path="/Herramientas" element={<Herramientas />} />
         </Routes>
       </main>

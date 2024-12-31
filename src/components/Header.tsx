@@ -3,7 +3,7 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { FaShoppingCart, FaBars, FaSearch, FaTools } from 'react-icons/fa';
 import { IoHome } from 'react-icons/io5';
 import { IoIosContact } from 'react-icons/io';
-import { CgSmartHomeBoiler, CgSmartHomeRefrigerator } from 'react-icons/cg';
+import { CgSmartHomeRefrigerator } from 'react-icons/cg';
 import { GiSplitCross } from 'react-icons/gi';
 import { SiProtools } from 'react-icons/si';
 import { CSSTransition } from 'react-transition-group';
@@ -122,14 +122,9 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                         onClick={() => navigate('/Cobre')}
                         className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
                     >
-                        <SiProtools className="inline-block mr-2" /> Caños de cobre y Accesorios
+                        <SiProtools className="inline-block mr-2" /> Caños de cobre | Gases refrigerantes
                     </button>
-                    <button
-                        onClick={() => navigate('/Gas')}
-                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
-                    >
-                        <CgSmartHomeBoiler className="inline-block mr-2" /> Gases Refrigerantes
-                    </button>
+                    
                     <button
                         onClick={() => navigate('/Herramientas')}
                         className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
