@@ -1,5 +1,5 @@
 import React from 'react';
-import { productsAires } from '../data/aires';
+import { productsHerramientas } from '../data/herramientas';
 import { Product } from '../types/types';
 
 const Herramientas: React.FC = () => {
@@ -27,7 +27,7 @@ const Herramientas: React.FC = () => {
 
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="flex flex-wrap justify-center gap-6">
-                    {productsAires.map((product) => (
+                    {productsHerramientas.map((product) => (
                         <div
                             key={product.id}
                             className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden flex flex-col"
