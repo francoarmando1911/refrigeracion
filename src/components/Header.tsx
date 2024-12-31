@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { FaShoppingCart, FaBars, FaSearch, FaTools } from 'react-icons/fa';
 import { IoHome } from 'react-icons/io5';
@@ -16,12 +16,26 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+    const menuRef = useRef<HTMLDivElement | null>(null);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     useEffect(() => {
-        setIsMenuOpen(false);
+        setIsMenuOpen(false); 
     }, [location]);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     return (
         <header className="sticky top-0 z-10">
