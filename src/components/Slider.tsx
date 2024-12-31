@@ -48,7 +48,7 @@ const Slider: React.FC = () => {
   }, [isPlaying, isHovered, nextSlide]);
 
   return (
-    <div className="relative max-w-full mx-auto mt-16 overflow-hidden rounded-xl shadow-xl">
+    <div className="relative max-w-full mx-auto mt-16 overflow-hidden shadow-xl">
       <div
         className="relative h-72 sm:h-96 md:h-[500px]"
         onMouseEnter={handleMouseEnter}

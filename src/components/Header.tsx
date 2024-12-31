@@ -99,40 +99,40 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                 classNames="menu-transition"
                 unmountOnExit
             >
-                <div className="absolute top-full left-0 w-full bg-slate-200 p-4 z-20">
+                <div className="absolute top-full left-0 w-full bg-gradient-to-r from-blue-50 to-indigo-50 p-4 z-20">
                     <button
                         onClick={toggleMenu}
-                        className="text-lg mb-4 md:hidden"
+                        className="text-lg mb-4 "
                     >
                         Cerrar
                     </button>
                     <button
                         onClick={() => navigate('/Refrigeracion')}
-                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
                     >
                         <CgSmartHomeRefrigerator className="inline-block mr-2" /> Refrigeración
                     </button>
                     <button
                         onClick={() => navigate('/AireAcondicionado')}
-                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
                     >
                         <GiSplitCross className="inline-block mr-2" /> Aire Acondicionado
                     </button>
                     <button
                         onClick={() => navigate('/Cobre')}
-                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
                     >
                         <SiProtools className="inline-block mr-2" /> Caños de cobre y Accesorios
                     </button>
                     <button
                         onClick={() => navigate('/Gas')}
-                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
                     >
                         <CgSmartHomeBoiler className="inline-block mr-2" /> Gases Refrigerantes
                     </button>
                     <button
                         onClick={() => navigate('/Herramientas')}
-                        className="w-full bg-slate-50 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
                     >
                         <FaTools className="inline-block mr-2" /> Electricidad y Herramientas
                     </button>
