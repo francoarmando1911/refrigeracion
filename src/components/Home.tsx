@@ -33,7 +33,7 @@ const Home: React.FC = () => {
 
         {/* Box 2 */}
         <Link
-          to="/contacto"
+          to="/Contacto"
           aria-label="Contacto"
           className="link-box bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
           style={{

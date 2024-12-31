@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                         <FaBars />
                     </button>
                     <button
-                        onClick={() => navigate('/contact')}
+                        onClick={() => navigate('/Contacto')}
                         className="bg-white text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 transform hover:scale-105"
                     >
                         <IoIosContact />
