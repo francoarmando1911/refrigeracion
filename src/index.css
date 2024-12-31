@@ -6,10 +6,10 @@
   @apply opacity-0 translate-y-[-20px];
 }
 .menu-transition-enter-active {
-  @apply opacity-100 translate-y-0 transition-all duration-300 ease-in-out;
+  @apply opacity-50 translate-y-0 transition-all duration-300 ease-in-out;
 }
 .menu-transition-exit {
-  @apply opacity-100 translate-y-0;
+  @apply opacity-50 translate-y-0;
 }
 .menu-transition-exit-active {
   @apply opacity-0 translate-y-[-20px] transition-all duration-300 ease-in-out;

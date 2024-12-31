@@ -10,8 +10,14 @@ const Refrigeración: React.FC = () => {
   return (
     <>
       <div className="relative overflow-hidden rounded-xl">
-        <div className="bg-gradient-to-b from-red-600 to-red-400 w-full h-60 flex items-center justify-center px-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-center">
+        <div className="w-full h-60 relative flex items-center justify-center px-6">
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: "url('/refriSlider.png')", opacity: 0.5 }}
+          ></div>
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <h1 className="text-4xl font-bold text-center leading-tight text-white relative z-10"
+            style={{ zIndex: '1' }}>
             Refrigeración
           </h1>
         </div>
