@@ -13,8 +13,7 @@ const Home: React.FC = () => {
       {/* Primera Sección */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
         {/* Box 1 */}
-        <Link
-          to="/Refrigeracion"
+        <div
           aria-label="Refrigeracion"
           className="link-box p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
           style={{
@@ -26,14 +25,13 @@ const Home: React.FC = () => {
         >
           <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
           <div className="relative z-10">
-            <h2 className="text-xl font-semibold">Ver Productos</h2>
-            <p>Explora nuestra variedad de productos disponibles.</p>
+            <h2 className="text-xl font-semibold">Envios</h2>
+            <p>Envios disponibles a cualquier lugar del pais 🚛 🇦🇷</p>
           </div>
-        </Link>
+        </div>
 
         {/* Box 2 */}
-        <Link
-          to="/Contacto"
+        <div
           aria-label="Contacto"
           className="link-box bg-red-700 p-6 text-white text-center rounded-lg shadow-lg hover:bg-red-900 transition transform duration-200 ease-in-out relative"
           style={{
@@ -46,9 +44,9 @@ const Home: React.FC = () => {
           <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
           <div className="relative z-10">
             <h2 className="text-xl font-semibold">Ofertas especiales</h2>
-            <p>No te pierdas nuestras ofertas exclusivas.</p>
+            <p>No te pierdas nuestras ofertas exclusivas</p>
           </div>
-        </Link>
+        </div>
 
         {/* Box 3 */}
         <Link
@@ -65,7 +63,7 @@ const Home: React.FC = () => {
           <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
           <div className="relative z-10">
             <h2 className="text-xl font-semibold">Contacto</h2>
-            <p>Ponte en contacto con nosotros para más información.</p>
+            <p>Ponte en contacto con nosotros para más información</p>
           </div>
         </Link>
 
@@ -75,47 +73,55 @@ const Home: React.FC = () => {
 
       {/* Segunda Sección */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
-        <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
-          <img
-            src="/productos/slider4.png"
-            alt="Heladeras y Freezers"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-          <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
-          <div className="relative z-10 flex flex-col items-center justify-center h-full">
-            <h2 className="text-xl font-semibold">Refrigeración</h2>
-            <p>Familiar, comercial e industrial.</p>
-          </div>
-        </div>
 
-        <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
-          <img
-            src="/productos/aire1.png"
-            alt="Heladeras y Freezers"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-          <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
-          <div className="relative z-10 flex flex-col items-center justify-center h-full">
-            <h2 className="text-xl font-semibold">Aire Acondicionados</h2>
-            <p>Repuestos, accesorios y equipos.</p>
+        <Link to="/Refrigeracion" className="block">
+          <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+            <img
+              src="/productos/slider4.png"
+              alt="Heladeras y Freezers"
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
+            <div className="relative z-10 flex flex-col items-center justify-center h-full">
+              <h2 className="text-xl font-semibold">Refrigeración</h2>
+              <p>Familiar, comercial e industrial.</p>
+            </div>
           </div>
-        </div>
+        </Link>
 
-        <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
-          <img
-            src="/productos/blanca1.png"
-            alt="Heladeras y Freezers"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-          <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
-          <div className="relative z-10 flex flex-col items-center justify-center h-full">
-            <h2 className="text-xl font-semibold">Línea Blanca</h2>
-            <p>Lavarropas, secarropas, microondas y más.</p>
+        <Link to="/AireAcondicionados" className="block">
+          <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+            <img
+              src="/productos/aire1.png"
+              alt="Aire Acondicionados"
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
+            <div className="relative z-10 flex flex-col items-center justify-center h-full">
+              <h2 className="text-xl font-semibold">Aire Acondicionados</h2>
+              <p>Repuestos, accesorios y equipos.</p>
+            </div>
           </div>
-        </div>
+        </Link>
+
+        <Link to="/LineaBlanca" className="block">
+          <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
+            <img
+              src="/productos/blanca1.png"
+              alt="Línea Blanca"
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
+            <div className="relative z-10 flex flex-col items-center justify-center h-full">
+              <h2 className="text-xl font-semibold">Línea Blanca</h2>
+              <p>Lavarropas, secarropas, microondas y más.</p>
+            </div>
+          </div>
+        </Link>
+
       </div>
 
-      <h1 className="text-3xl font-bold text-center md:text-4xl">Ofertas Imperdibles</h1>
+      <h1 className="text-3xl font-bold text-center md:text-4xl">Ofertas únicas</h1>
 
       <div className="w-full overflow-x-auto py-2">
         <div className="flex space-x-4 px-4 sm:space-x-6 lg:space-x-8">
