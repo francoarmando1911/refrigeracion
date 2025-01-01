@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef} from 'react';
 import type { CartProps } from '../types/types';
 
 const CartComponent: React.FC<CartProps> = ({
@@ -8,10 +8,30 @@ const CartComponent: React.FC<CartProps> = ({
   decreaseQuantity,
   clearCart,
   cartTotal,
-  isEmpty
+  isEmpty,
 }) => {
+  const cartRef = useRef<HTMLDivElement>(null);
+
+  // Detectar si se hace clic fuera del carrito
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
+        clearCart(); 
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [clearCart]);
+
   return (
-    <div className="absolute right-0 mt-2 w-full max-w-xs bg-white shadow-lg z-10 p-4 rounded-lg">
+    <div
+      ref={cartRef}
+      className="fixed right-0 mt-2 w-full max-w-xs bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg z-10 p-4 rounded-lg"
+    >
       {isEmpty ? (
         <div className="text-center text-gray-600">El carrito está vacío</div>
       ) : (
@@ -22,11 +42,17 @@ const CartComponent: React.FC<CartProps> = ({
                 <div className="flex-1">
                   <span className="text-black">{item.name}</span>
                   <div className="flex items-center mt-1">
-                    <button onClick={() => decreaseQuantity(item.id)} className="bg-gray-200 px-2 py-1 rounded-l">
+                    <button
+                      onClick={() => decreaseQuantity(item.id)}
+                      className="bg-gray-200 px-2 py-1 rounded-l"
+                    >
                       -
                     </button>
                     <span className="mx-2">{item.quantity}</span>
-                    <button onClick={() => increaseQuantity(item.id)} className="bg-gray-200 px-2 py-1 rounded-r">
+                    <button
+                      onClick={() => increaseQuantity(item.id)}
+                      className="bg-gray-200 px-2 py-1 rounded-r"
+                    >
                       +
                     </button>
                   </div>

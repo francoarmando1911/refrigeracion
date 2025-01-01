@@ -140,7 +140,10 @@ const Home: React.FC = () => {
               </div>
               <div className="p-4 flex justify-center">
                 <button
-                  onClick={() => addToCart(product)}
+                  onClick={() => {
+                    console.log("Button clicked!"); 
+                    addToCart(product); 
+                  }}
                   className="w-full bg-red-600 text-white rounded-xl hover:bg-red-700 transition duration-200 py-2"
                 >
                   Agregar

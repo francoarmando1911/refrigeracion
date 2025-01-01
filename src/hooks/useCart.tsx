@@ -11,7 +11,7 @@ export const useCart = (type: string) => {
     const [data, setData] = useState<Product[]>([]);
 
     useEffect(() => {
-        const filteredProducts = products.filter(product => product.category === type);
+        const filteredProducts = products.filter(product => product.name === type);
         setData(filteredProducts);
         console.log("Filtered products for type", type, filteredProducts);
     }, [type]);
@@ -35,9 +35,11 @@ export const useCart = (type: string) => {
                     ? { ...product, quantity: product.quantity + 1 }
                     : product
             );
+            console.log("Updated cart after adding item:", updatedCart);
             setCart(updatedCart);
         } else {
             const newItem: CartItem = { ...item, quantity: 1 };
+            console.log("Adding new item:", newItem);
             setCart([...cart, newItem]);
         }
     }

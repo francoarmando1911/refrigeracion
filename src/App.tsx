@@ -26,7 +26,9 @@ const App: React.FC = () => {
   return (
     <>
       <First />
-      <Header toggleCart={toggleCart} />
+      <Header 
+        toggleCart={toggleCart}
+      />
 
       {showCart && !isAuthPage && (
         <CartComponent
