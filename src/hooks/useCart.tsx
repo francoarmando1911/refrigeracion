@@ -21,6 +21,10 @@ export const useCart = (type: string) => {
     const MAX_ITEMS = 5;
     const MIN_ITEMS = 1;
 
+    const cartItemsCount = useMemo(() => {
+        return cart.reduce((total, item) => total + item.quantity, 0);
+    }, [cart]);
+
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
@@ -90,6 +94,7 @@ export const useCart = (type: string) => {
         increaseQuantity,
         clearCart,
         isEmpty,
-        cartTotal
+        cartTotal,
+        cartItemsCount,
     };
 };

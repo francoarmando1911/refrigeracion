@@ -36,5 +36,6 @@ export interface HeaderProps {
     cartTotal: number;
     isEmpty: boolean;
     toggleCart: () => void;
+    cartItemsCount: number;
 }
 

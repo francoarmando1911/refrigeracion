@@ -10,9 +10,10 @@ import { CSSTransition } from 'react-transition-group';
 
 interface HeaderProps {
     toggleCart: () => void;
+    cartItemsCount: number;
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
+const Header: React.FC<HeaderProps> = ({ toggleCart, cartItemsCount }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -21,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     useEffect(() => {
-        setIsMenuOpen(false); 
+        setIsMenuOpen(false);
     }, [location]);
 
     useEffect(() => {
@@ -86,24 +87,27 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                     </button>
                     <button
                         onClick={toggleCart}
-                        className="bg-white text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 transform hover:scale-105"
+                        className="relative bg-white text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 transform hover:scale-105"
                     >
                         <FaShoppingCart />
+                        {cartItemsCount > 0 && (
+                            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-1">
+                                {cartItemsCount}
+                            </span>
+                        )}
                     </button>
                 </div>
             </div>
 
+            {/* Menú desplegable */}
             <CSSTransition
                 in={isMenuOpen}
                 timeout={300}
                 classNames="menu-transition"
                 unmountOnExit
             >
-                <div className="absolute top-full left-0 w-full bg-gradient-to-r from-blue-50 to-indigo-50 p-4 z-20">
-                    <button
-                        onClick={toggleMenu}
-                        className="text-lg mb-4 "
-                    >
+                <div className="absolute top-full left-0 w-full bg-gradient-to-r from-blue-50 to-indigo-50 p-4 z-20" ref={menuRef}>
+                    <button onClick={toggleMenu} className="text-lg mb-4">
                         Cerrar
                     </button>
                     <button
@@ -124,7 +128,6 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                     >
                         <SiProtools className="inline-block mr-2" /> Caños de cobre | Gases refrigerantes
                     </button>
-                    
                     <button
                         onClick={() => navigate('/Herramientas')}
                         className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
@@ -133,7 +136,6 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                     </button>
                 </div>
             </CSSTransition>
-
         </header>
     );
 };

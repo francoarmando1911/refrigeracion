@@ -13,7 +13,7 @@ const LineaBlanca: React.FC = () => {
                 <div className="w-full h-60 relative flex items-center justify-center px-6">
                     <div
                         className="absolute inset-0 w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: "url('/sliderAire.png')", opacity: 0.5 }}
+                        style={{ backgroundImage: "url('/linBlanca.png')", opacity: 0.5 }}
                     ></div>
                     <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                     <h1 className="text-4xl font-bold text-center leading-tight text-white relative z-10"

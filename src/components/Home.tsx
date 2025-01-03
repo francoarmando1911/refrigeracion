@@ -89,7 +89,7 @@ const Home: React.FC = () => {
           </div>
         </Link>
 
-        <Link to="/AireAcondicionados" className="block">
+        <Link to="/AireAcondicionado" className="block">
           <div className="relative h-72 w-full sm:w-72 p-6 bg-purple-500 text-white text-center rounded-xl shadow-lg hover:bg-red-600 hover:scale-105 transition transform duration-200 ease-in-out overflow-hidden">
             <img
               src="/productos/aire1.png"
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
             />
             <div className="absolute inset-0 bg-black opacity-60 z-5"></div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full">
-              <h2 className="text-xl font-semibold">Aire Acondicionados</h2>
+              <h2 className="text-xl font-semibold">Aires Acondicionados</h2>
               <p>Repuestos, accesorios y equipos.</p>
             </div>
           </div>

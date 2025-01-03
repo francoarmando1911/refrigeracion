@@ -26,7 +26,7 @@ const CartComponent: React.FC<CartProps> = ({
       document.removeEventListener('click', handleClickOutside);
     };
   }, [clearCart]);
-
+  
   return (
     <div
       ref={cartRef}
@@ -81,5 +81,4 @@ const CartComponent: React.FC<CartProps> = ({
     </div>
   );
 };
-
 export default CartComponent;

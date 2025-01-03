@@ -29,6 +29,7 @@ const App: React.FC = () => {
       <First />
       <Header 
         toggleCart={toggleCart}
+        cartItemsCount={cart.length} 
       />
 
       {showCart && !isAuthPage && (
@@ -42,7 +43,7 @@ const App: React.FC = () => {
           isEmpty={isEmpty}
         />
       )}
-
+      
       {location.pathname === '/' && <Slider />}
 
       <main className="flex-grow p-4 mt-[10px]">
