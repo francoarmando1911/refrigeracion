@@ -7,10 +7,19 @@ import { CgSmartHomeRefrigerator } from 'react-icons/cg';
 import { GiSplitCross } from 'react-icons/gi';
 import { SiProtools } from 'react-icons/si';
 import { CSSTransition } from 'react-transition-group';
+import { Product } from '../types/types';
 
 interface HeaderProps {
     toggleCart: () => void;
     cartItemsCount: number;
+    cart: Product[];
+    removeFromCart: (id: number) => void;
+    increaseQuantity: (id: number) => void;
+    decreaseQuantity: (id: number) => void;
+    clearCart: () => void;
+    isEmpty: boolean;
+    cartTotal: number;
+    showCart: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleCart, cartItemsCount }) => {

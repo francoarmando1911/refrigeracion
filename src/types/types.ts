@@ -7,6 +7,7 @@ export interface Product {
     category: string;
     discount?: number;
     imageUrl: string;
+    quantity: number;
 }
 
 export interface CartItem extends Product {
@@ -24,6 +25,7 @@ export type CartProps = {
     clearCart: () => void;
     cartTotal: number;
     isEmpty: boolean;
+    onClose: () => void;
 };
 
 export interface HeaderProps {

@@ -9,24 +9,23 @@ const CartComponent: React.FC<CartProps> = ({
   clearCart,
   cartTotal,
   isEmpty,
+  onClose, 
 }) => {
   const cartRef = useRef<HTMLDivElement>(null);
 
-  // Detectar si se hace clic fuera del carrito
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
-        clearCart(); 
+        onClose(); 
       }
     };
 
     document.addEventListener('click', handleClickOutside);
-
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [clearCart]);
-  
+  }, [onClose]);
+
   return (
     <div
       ref={cartRef}

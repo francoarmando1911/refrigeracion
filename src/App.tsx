@@ -16,23 +16,31 @@ import Contacto from './pages/Contacto';
 import LineaBlanca from './pages/LineaBlanca';
 
 const App: React.FC = () => {
-  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('productos');
+  const { cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('Product');
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
 
   const toggleCart = () => setShowCart((prev) => !prev);
-
-  const isAuthPage = ['/pages/login', '/register'].includes(location.pathname);
+  const closeCart = () => setShowCart(false);
 
   return (
     <>
       <First />
+
       <Header 
         toggleCart={toggleCart}
-        cartItemsCount={cart.length} 
+        cartItemsCount={cart.length}
+        cart={cart}
+        removeFromCart={removeFromCart}
+        increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
+        clearCart={clearCart}
+        isEmpty={isEmpty}
+        cartTotal={cartTotal}
+        showCart={showCart}
       />
 
-      {showCart && !isAuthPage && (
+      {showCart && (
         <CartComponent
           cart={cart}
           removeFromCart={removeFromCart}
@@ -41,6 +49,8 @@ const App: React.FC = () => {
           clearCart={clearCart}
           cartTotal={cartTotal}
           isEmpty={isEmpty}
+          onClose={closeCart}
+          
         />
       )}
       
