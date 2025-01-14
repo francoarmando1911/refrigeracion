@@ -16,7 +16,7 @@ import Contacto from './pages/Contacto';
 import LineaBlanca from './pages/LineaBlanca';
 
 const App: React.FC = () => {
-  const { cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('Product');
+  const { cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('Product');
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
 

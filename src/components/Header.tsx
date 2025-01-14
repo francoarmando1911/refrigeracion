@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart, cartItemsCount }) => {
                 <div className="flex justify-center md:justify-start">
                     <Link to="/">
                         <img
-                            src="/logo3.png"
+                            src="/logo2.png"
                             alt="Logo"
                             className="h-12 w-auto sm:h-20 transition-transform duration-300 hover:scale-105"
                         />
