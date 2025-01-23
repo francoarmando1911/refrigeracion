@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './components/Home';
 import { useCart } from './hooks/useCart';
@@ -19,9 +19,14 @@ const App: React.FC = () => {
   const { cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal } = useCart('Product');
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
+  const cartItemsCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
 
   const toggleCart = () => setShowCart((prev) => !prev);
   const closeCart = () => setShowCart(false);
+
+  useEffect(() => {
+    closeCart();
+  }, [location]);
 
   return (
     <>
@@ -29,7 +34,7 @@ const App: React.FC = () => {
 
       <Header 
         toggleCart={toggleCart}
-        cartItemsCount={cart.length}
+        cartItemsCount={cartItemsCount}
         cart={cart}
         removeFromCart={removeFromCart}
         increaseQuantity={increaseQuantity}

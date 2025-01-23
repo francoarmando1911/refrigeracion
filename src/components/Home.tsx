@@ -5,7 +5,7 @@ import { products } from '../data/discounts';
 
 const Home: React.FC = () => {
 
-  const { addToCart } = useCart('Productos');
+  const { addToCart } = useCart('Product');
 
   return (
     <div className="flex flex-col items-center space-y-8 p-6">
@@ -125,9 +125,9 @@ const Home: React.FC = () => {
 
       <div className="w-full overflow-x-auto py-2">
         <div className="flex space-x-4 px-4 sm:space-x-6 lg:space-x-8">
-          {products.map((product, index) => (
+          {products.map((product, ProductId) => (
             <div
-              key={index}
+              key={ProductId}
               className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden flex flex-col"
             >
               <img
@@ -147,8 +147,8 @@ const Home: React.FC = () => {
               <div className="p-4 flex justify-center">
                 <button
                   onClick={() => {
-                    console.log("Button clicked!"); 
-                    addToCart(product); 
+                    console.log("Producto a agregar: ", product);
+                    addToCart(product);
                   }}
                   className="w-full bg-red-600 text-white rounded-xl hover:bg-red-700 transition duration-200 py-2"
                 >
