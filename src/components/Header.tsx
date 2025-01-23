@@ -7,26 +7,19 @@ import { CgSmartHomeRefrigerator } from 'react-icons/cg';
 import { GiSplitCross } from 'react-icons/gi';
 import { SiProtools } from 'react-icons/si';
 import { CSSTransition } from 'react-transition-group';
-import { Product } from '../types/types';
+import { useCart } from '../hooks/useCart'; 
 
 interface HeaderProps {
     toggleCart: () => void;
-    cartItemsCount: number;
-    cart: Product[];
-    removeFromCart: (id: number) => void;
-    increaseQuantity: (id: number) => void;
-    decreaseQuantity: (id: number) => void;
-    clearCart: () => void;
-    isEmpty: boolean;
-    cartTotal: number;
-    showCart: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleCart, cartItemsCount }) => {
+const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
+    const { cartItemsCount } = useCart(); 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
     const menuRef = useRef<HTMLDivElement | null>(null);
+    const transitionRef = useRef(null); 
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -111,11 +104,15 @@ const Header: React.FC<HeaderProps> = ({ toggleCart, cartItemsCount }) => {
             {/* Menú desplegable */}
             <CSSTransition
                 in={isMenuOpen}
+                nodeRef={transitionRef}
                 timeout={300}
                 classNames="menu-transition"
                 unmountOnExit
             >
-                <div className="absolute top-full left-0 w-full bg-gradient-to-r from-blue-50 to-indigo-50 p-4 z-20" ref={menuRef}>
+                <div 
+                    ref={transitionRef}
+                    className="absolute top-full left-0 w-full bg-gradient-to-r from-blue-50 to-indigo-50 p-4 z-20"
+                >
                     <button onClick={toggleMenu} className="text-lg mb-4">
                         Cerrar
                     </button>

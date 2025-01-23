@@ -5,7 +5,7 @@ import { products } from '../data/discounts';
 
 const Home: React.FC = () => {
 
-  const { addToCart } = useCart('Product');
+  const { addToCart } = useCart();
 
   return (
     <div className="flex flex-col items-center space-y-8 p-6">
