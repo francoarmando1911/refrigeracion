@@ -7,7 +7,7 @@ import { CgSmartHomeRefrigerator } from 'react-icons/cg';
 import { GiSplitCross } from 'react-icons/gi';
 import { SiProtools } from 'react-icons/si';
 import { CSSTransition } from 'react-transition-group';
-import { useCart } from '../hooks/useCart'; 
+import { useCart } from '../context/CartContext'; 
 
 interface HeaderProps {
     toggleCart: () => void;

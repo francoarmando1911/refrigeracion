@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, /*useEffect,*/ useCallback } from 'react';
+import { createContext, useContext, useCallback, useMemo, useState } from 'react';
 import type { Product, CartItem, ProductID } from '../types/types';
 
 type CartContextType = {
@@ -28,10 +28,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const MAX_ITEMS = 5;
     const MIN_ITEMS = 1;
 
-    // Función de actualización profunda
     const updateCart = useCallback((updater: (prev: CartItem[]) => CartItem[]) => {
         setCart(prev => {
-            const newCart = updater(structuredClone(prev));
+            const newCart = updater([...prev]); // Usa una copia del estado anterior
             localStorage.setItem('cart', JSON.stringify(newCart));
             return newCart;
         });
@@ -39,13 +38,17 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
     const addToCart = useCallback((product: Product) => {
         updateCart(prev => {
-            const existing = prev.find(item => item.id === product.id);
-            if (existing) {
-                existing.quantity = Math.min(existing.quantity + 1, MAX_ITEMS);
-            } else {
-                prev.push({ ...product, quantity: 1 });
+            const existingIndex = prev.findIndex(item => item.id === product.id);
+            if (existingIndex >= 0) {
+                const updatedItem = {
+                    ...prev[existingIndex],
+                    quantity: Math.min(prev[existingIndex].quantity + 1, MAX_ITEMS)
+                };
+                const newCart = [...prev];
+                newCart[existingIndex] = updatedItem;
+                return newCart;
             }
-            return [...prev];
+            return [...prev, { ...product, quantity: 1 }];
         });
     }, [updateCart]);
 
@@ -56,7 +59,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const increaseQuantity = useCallback((id: ProductID) => {
         updateCart(prev =>
             prev.map(item =>
-                item.id === id ? { ...item, quantity: Math.min(item.quantity + 1, MAX_ITEMS) } : item
+                item.id === id
+                    ? { ...item, quantity: Math.min(item.quantity + 1, MAX_ITEMS) }
+                    : item
             )
         );
     }, [updateCart]);
@@ -64,17 +69,25 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const decreaseQuantity = useCallback((id: ProductID) => {
         updateCart(prev =>
             prev.map(item =>
-                item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, MIN_ITEMS) } : item
+                item.id === id
+                    ? { ...item, quantity: Math.max(item.quantity - 1, MIN_ITEMS) }
+                    : item
             )
         );
     }, [updateCart]);
 
     const clearCart = useCallback(() => updateCart(() => []), [updateCart]);
 
-    // Valores calculados
-    const isEmpty = cart.length === 0;
-    const cartTotal = cart.reduce((t, i) => t + (i.price * i.quantity), 0);
-    const cartItemsCount = cart.reduce((t, i) => t + i.quantity, 0);
+    // Valores calculados con useMemo para optimización
+    const isEmpty = useMemo(() => cart.length === 0, [cart]);
+    const cartTotal = useMemo(() =>
+        cart.reduce((total, item) => total + (item.price * item.quantity), 0),
+        [cart]
+    );
+    const cartItemsCount = useMemo(() =>
+        cart.reduce((total, item) => total + item.quantity, 0),
+        [cart]
+    );
 
     return (
         <CartContext.Provider value={{

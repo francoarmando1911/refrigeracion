@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../hooks/useCart';
+import { useCart } from '../context/CartContext';
 import { products } from '../data/discounts';
 
 const Home: React.FC = () => {

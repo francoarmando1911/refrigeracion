@@ -16,7 +16,7 @@ const CartComponent: React.FC<{ onClose: () => void; isOpen: boolean }> = ({ onC
   } = useCart();
 
   const cartRef = useRef<HTMLDivElement>(null);
-  const transitionRef = useRef(null);
+  //const transitionRef = useRef(null);
   //const location = useLocation();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const CartComponent: React.FC<{ onClose: () => void; isOpen: boolean }> = ({ onC
   return (
     <CSSTransition
       in={isOpen}
-      nodeRef={transitionRef}
+      nodeRef={cartRef}
       timeout={300}
       classNames="cart-transition"
       unmountOnExit
