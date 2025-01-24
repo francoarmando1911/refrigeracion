@@ -1,11 +1,10 @@
 import React from 'react';
 import { productsLineablanca } from '../data/lineaBlanca';
-import { Product } from '../types/types';
+//import { Product } from '../types/types';
+import { useCart } from '../context/CartContext';
 
 const LineaBlanca: React.FC = () => {
-    const addToCart = (product: Product) => {
-        console.log('Producto agregado al carrito:', product);
-    };
+    const { addToCart } = useCart();
 
     return (
         <>
@@ -30,7 +29,7 @@ const LineaBlanca: React.FC = () => {
                     {productsLineablanca.map((product) => (
                         <div
                             key={product.id}
-                            className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden flex flex-col"
+                            className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden flex flex-col transition-transform duration-200 hover:scale-105"
                         >
                             <img
                                 src={product.imageUrl}
@@ -44,12 +43,24 @@ const LineaBlanca: React.FC = () => {
                             )}
                             <div className="p-4 flex-grow">
                                 <h2 className="text-lg font-bold">{product.name}</h2>
-                                <p className="text-gray-700 font-semibold">${product.price}</p>
+                                <div className="flex justify-between items-center mt-2">
+                                    <p className="text-gray-700 font-semibold">
+                                        ${product.price.toFixed(2)}
+                                    </p>
+                                    {product.discount && (
+                                        <p className="text-sm text-gray-500 line-through">
+                                            ${(product.price / (1 - product.discount / 100)).toFixed(2)}
+                                        </p>
+                                    )}
+                                </div>
                             </div>
                             <div className="p-4 flex justify-center">
                                 <button
-                                    onClick={() => addToCart(product)}
-                                    className="w-full bg-red-600 text-white rounded-xl hover:bg-red-700 transition duration-200 py-2"
+                                    onClick={() => addToCart({
+                                        ...product,
+                                        quantity: 1
+                                    })}
+                                    className="w-full bg-red-600 text-white rounded-xl hover:bg-red-700 transition-colors duration-200 py-2"
                                 >
                                     Agregar
                                 </button>
