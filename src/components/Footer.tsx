@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
                     <div className="space-y-4 transition-all duration-300 hover:transform hover:scale-105">
                         <h3 className="text-lg font-semibold text-gray-900">Contacto</h3>
                         <p className="text-gray-600">Email: refrigeracion@gmail.com</p>
-                        <p className="text-gray-600">Teléfono: (3442) 310036</p>
+                        <p className="text-gray-600">Teléfono: (3442)310036</p>
                         <p className="text-gray-600">
                             Entre Rios - Argentina
                         </p>

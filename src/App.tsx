@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import Home from './components/Home';
-//import { useCart } from './hooks/useCart';
 import './index.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -31,7 +31,14 @@ const App: React.FC = () => {
       <First />
       <Header toggleCart={toggleCart} />
 
-      {showCart && <CartComponent onClose={closeCart} />}
+      <CSSTransition
+        in={showCart}
+        timeout={300}
+        classNames="cart-transition"
+        unmountOnExit
+      >
+        <CartComponent isOpen={showCart} onClose={closeCart} />
+      </CSSTransition>
 
       {location.pathname === '/' && <Slider />}
 

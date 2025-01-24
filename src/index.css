@@ -14,3 +14,19 @@
 .menu-transition-exit-active {
   @apply opacity-0 translate-y-[-20px] transition-all duration-300 ease-in-out;
 }
+
+.cart-transition-enter {
+  @apply opacity-0 translate-y-[-20px];
+}
+
+.cart-transition-enter-active {
+  @apply opacity-50 translate-y-0 transition-all duration-300 ease-in-out;
+}
+
+.cart-transition-exit {
+  @apply opacity-50 translate-y-0;
+}
+
+.cart-transition-exit-active {
+  @apply opacity-0 translate-y-[-20px] transition-all duration-300 ease-in-out;
+}
