@@ -40,7 +40,7 @@ const CartComponent: React.FC<{ onClose: () => void; isOpen: boolean }> = ({ onC
     >
       <div
         ref={cartRef}
-        className="fixed top-16 left-0 md:left-0 md:top-32 mx-auto w-full bg-gradient-to-r from-blue-50 to-indigo-50 shadow-xl z-40 p-4"
+        className="fixed left-0 md:left-0 md:top-32 mx-auto w-full bg-gradient-to-r from-blue-50 to-indigo-50 shadow-xl z-40 p-4"
         style={{
           maxHeight: 'calc(100vh - 5rem)',
           overflow: 'hidden',
