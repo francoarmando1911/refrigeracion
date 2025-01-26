@@ -69,7 +69,7 @@ const Home: React.FC = () => {
 
       </div>
 
-      <h1 className="text-3xl font-bold text-center md:text-4xl">Bienvenido a nuestra tienda</h1>
+      <h1 className="text-3xl font-bold text-center md:text-4xl">Bienvenidos a nuestra tienda</h1>
 
       {/* Segunda Sección */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 w-full max-w-5xl">
@@ -121,14 +121,14 @@ const Home: React.FC = () => {
 
       </div>
 
-      <h1 className="text-3xl font-bold text-center md:text-4xl">Ofertas únicas</h1>
+      <h1 className="text-3xl font-bold text-center md:text-4xl">Productos destacados</h1>
 
       <div className="w-full overflow-x-auto py-2">
-        <div className="flex space-x-4 px-4 sm:space-x-6 lg:space-x-8">
+        <div className="flex space-x-4 px-4 sm:space-x-6 lg:space-x-8 ">
           {products.map((product, ProductId) => (
             <div
               key={ProductId}
-              className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden flex flex-col"
+              className="relative min-w-[200px] max-w-xs border rounded-xl shadow-lg overflow-hidden flex flex-col bg-gradient-to-r from-blue-50 to-indigo-50"
             >
               <img
                 src={product.imageUrl}

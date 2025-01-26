@@ -9,7 +9,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     id: 1,
-    image: "/productos/sliderComponentes.png",
+    image: "/electricidadSlider.png",
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const Slider: React.FC = () => {
   }, [isPlaying, isHovered, nextSlide]);
 
   return (
-    <div className="relative max-w-full mx-auto mt-16 overflow-hidden shadow-xl">
+    <div className="relative max-w-full mx-auto mt-5 overflow-hidden shadow-xl">
       <div
         className="relative h-72 sm:h-96 md:h-[500px]"
         onMouseEnter={handleMouseEnter}
