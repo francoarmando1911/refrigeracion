@@ -113,9 +113,11 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                     ref={transitionRef}
                     className="absolute top-full left-0 w-full bg-gradient-to-r from-blue-50 to-indigo-50 p-4 z-20"
                 >
-                    <button onClick={toggleMenu} className="text-lg mb-4">
-                        Cerrar
-                    </button>
+                    <div className='flex justify-end'>
+                        <button onClick={toggleMenu} className="text-lg mb-4 text-red-600 hover:text-red-800">
+                            X
+                        </button>
+                    </div>
                     <button
                         onClick={() => navigate('/Refrigeracion')}
                         className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
@@ -124,19 +126,19 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                     </button>
                     <button
                         onClick={() => navigate('/AireAcondicionado')}
-                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
                     >
                         <GiSplitCross className="inline-block mr-2" /> Aire Acondicionado
                     </button>
                     <button
                         onClick={() => navigate('/Cobre')}
-                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
                     >
                         <SiProtools className="inline-block mr-2" /> Caños de cobre | Gases refrigerantes
                     </button>
                     <button
                         onClick={() => navigate('/Herramientas')}
-                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2 md:w-auto"
+                        className="w-full bg-slate-200 text-red-700 px-4 py-2 rounded-full font-semibold hover:bg-purple-100 transition duration-300 flex items-center mb-2"
                     >
                         <FaTools className="inline-block mr-2" /> Electricidad y Herramientas
                     </button>
